@@ -1,0 +1,241 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Cadastro de filmes",
+    "description": "Documentação da api cadastro de filmes",
+    "version": "1.0.0"
+  },
+  "basePath": "/",
+
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  
+  "paths": {
+    "/user": {
+      "post": {
+        "tags": ["Usuarios"],
+        "summary":"Rota para criação de usuários",
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "number"
+                  }
+                },
+                "example": {
+                  "nome": "Helder",
+                  "email": "helder.hs@gmail.com",
+                  "password": "123123"
+                }
+              }
+            }
+          }
+        },
+        
+      "responses": {
+        "401": {
+          "description": "Erro"
+        },        
+        "201": {
+          "description": "OK"
+        }
+      }
+      }
+    },
+
+    "/login": {
+      "post": {
+        "tags": ["Login"],
+        "summary":"Rota para obter login e obter token JWT",
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                },
+                "example": {                  
+                  "email": "helder.hs@gmail.com",
+                  "password": "123123"
+                }
+              }
+            }
+          }
+        },
+        
+      "responses": {
+        "401": {
+          "description": "Erro"
+        },        
+        "201": {
+          "description": "OK"
+        }
+      }
+      }
+    },
+
+      "/filme": {
+      "post": {
+        "tags": ["Filmes"],
+        "summary":"Rota para criação de filmes",
+        "security": [{"bearerAuth": []}],
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string"
+                  },
+                  "descricao": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "nome": "Filme 1",
+                  "descricao": "Descricao do filme 1"
+                }
+              }
+            }
+          }
+        },
+        
+      "responses": {
+        "401": {
+          "description": "Erro"
+        },        
+        "201": {
+          "description": "OK"
+        }
+      }
+      }
+    },
+
+    "/filme/": {
+      "get": {
+        "tags": ["Filmes"],
+        "summary": "Rota que busca filmes cadastrados",
+        "security": [{"bearerAuth": []}],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+
+    "/filme/{id1}": {
+      "get": {
+        "tags": ["Filmes"],
+        "summary": "Rota que busca filmes cadastrados",
+        "security": [{"bearerAuth": []}],
+        "parameters": [
+          {
+          "name": "id1",
+          "in": "path",
+          "required": true,
+          "description": "ID do filme a ser pego",
+          "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+
+    "/filme/{id}": {
+      "put": {
+        "description": "Rota que atualiza um filme",
+        "security": [{"bearerAuth": []}],
+        "summary": "Rota que atualiza um filme",
+        "tags": ["Filmes"],
+        "parameters": [
+          {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "ID do filme a ser editado",
+          "type": "string"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string"
+                  },
+                  "descricao": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "nome": "Filme 1",
+                  "descricao": "Descricao do filme 1"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+
+    "/filme/{id2}": {
+      "delete": {
+        "tags": ["Filmes"],
+        "summary": "Rota que deleta um file cadastrado",
+        "security": [{"bearerAuth": []}],
+        "parameters": [
+          {
+          "name": "id2",
+          "in": "path",
+          "required": true,
+          "description": "ID do filme a ser deletado",
+          "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}

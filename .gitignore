@@ -1,0 +1,15 @@
+.idea/
+.vscode/
+node_modules/
+build/
+temp/
+.env
+coverage
+ormconfig.json
+dist
+HELDER COMANDOS.txt
+HELDER.TXT
+HLDER_VIDEOS.txt
+
+uploads/*
+!uploads/.gitkeep
