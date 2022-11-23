@@ -20,13 +20,13 @@ Sistema publicado na https://www.vultr.com , em uma VPS com sistema operacional 
 
 ## To run this project
 
-yarn
-yarn dev
+- yarn
+- yarn dev
 
 ## To compile this project
 
-yarn tsc
-yarn start
+* yarn tsc
+* yarn start
 
 # Helder H Salvalaio
 
