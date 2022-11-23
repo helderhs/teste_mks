@@ -9,8 +9,8 @@ Sistema publicado na https://www.vultr.com , em uma VPS com sistema operacional 
 * Nodejs esta rodando via PM2.
 * Redis e postgreeSQL estão rodando via docker.
 ## Comandos Docker
-docker run -d --name redis-stack-server -p 6379:6379 redis/redis-stack-server:latest
-docker run -d --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=123123 -e PGDATA=/var/lib/postgresql/data/pgdata -v /custom/mount:/var/lib/postgresql/data postgres
+* docker run -d --name redis-stack-server -p 6379:6379 redis/redis-stack-server:latest
+* docker run -d --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=123123 -e PGDATA=/var/lib/postgresql/data/pgdata -v /custom/mount:/var/lib/postgresql/data postgres
 
 # LINK SWAGGER RODANDO NO SISTEMA
 
