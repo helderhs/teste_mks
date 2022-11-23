@@ -1,5 +1,7 @@
 # Teste MKS
 
+
+
 # API EM TYPESCRIPT, DOCKER, SWAGGER, REDDIS, POSTGRE
 Backend desenvolvido em typescript, com autenticação JWT, typeorm, redis, postgreSQL, SWAGGER.
 Validação feita com celebrate, JOI
