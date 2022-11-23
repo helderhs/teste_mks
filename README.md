@@ -14,7 +14,7 @@ Sistema publicado na https://www.vultr.com , em uma VPS com sistema operacional 
 * docker run -d --name redis-stack-server -p 6379:6379 redis/redis-stack-server:latest
 * docker run -d --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=123123 -e PGDATA=/var/lib/postgresql/data/pgdata -v /custom/mount:/var/lib/postgresql/data postgres
 
-# LINK SWAGGER RODANDO NO SISTEMA
+# LINK SWAGGER RODANDO A API
 
 ## http://144.202.45.201:3000/api-docs/
 
